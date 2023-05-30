@@ -6,7 +6,7 @@ _DISCLAIMER: This is experimental software. **Use it at your own risk**!_
 
 The solidity contracts have been generalized in order to support any elliptic curve based on prime numbers up to 256 bits.
 
-`elliptic-curve-solidity` has been designed as a library with **only pure functions** aiming at decreasing gas consumption as much as possible. Additionally, gas consumption comparison can be found in the benchmark section. This library **does not check whether the points passed as arguments to the library belong to the curve**. However, the library exposes a method called *`isOnCurve`* that can be utilized before using the library functions.
+`elliptic-curve-solidity` has been designed as a library with **only pure functions** aiming at decreasing gas consumption as much as possible. Additionally, gas consumption comparison can be found in the benchmark section. This library **does not check whether the points passed as arguments to the library belong to the curve**. However, the library exposes a method called _`isOnCurve`_ that can be utilized before using the library functions.
 
 It contains 2 solidity libraries:
 
@@ -50,7 +50,7 @@ The `elliptic-curve-solidity` contract supports up to 256-bit curves. However, i
 
 Known limitations:
 
-- `deriveY` function do not work with the curves `secp224r1` and `secp224k1` because of the selected derivation algorithm. The computations for this curve are done with a modulo prime `p` such that `p mod 4 = 1`, thus a more complex algorithm is required (e.g. *Tonelli-Shanks algorithm*). Note that `deriveY` is just an auxiliary function, and thus does not limit the functionality of curve arithmetic operations.
+- `deriveY` function do not work with the curves `secp224r1` and `secp224k1` because of the selected derivation algorithm. The computations for this curve are done with a modulo prime `p` such that `p mod 4 = 1`, thus a more complex algorithm is required (e.g. _Tonelli-Shanks algorithm_). Note that `deriveY` is just an auxiliary function, and thus does not limit the functionality of curve arithmetic operations.
 - the library only supports elliptic curves with `cofactor = 1` (all supported curves have a `cofactor = 1`).
 
 ## Usage
@@ -60,7 +60,7 @@ Known limitations:
 The [Secp256k1](https://github.com/witnet/elliptic-curve-solidity/blob/master/examples/Secp256k1.sol) example depicts how to use the library by providing a function to derive a public key from a secret key:
 
 ```solidity
-pragma solidity 0.6.12;
+pragma solidity 0.8.15;
 
 import "elliptic-curve-solidity/contracts/EllipticCurve.sol";
 
